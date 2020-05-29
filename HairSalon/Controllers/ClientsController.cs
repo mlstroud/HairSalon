@@ -3,6 +3,7 @@ using HairSalon.Models;
 using System.Collections.Generic;
 using System.Linq;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace HairSalon.Controllers
 {
@@ -19,6 +20,21 @@ namespace HairSalon.Controllers
     {
       List<Client> model = _db.Clients.Include(clients => clients.Stylist).ToList();
       return View(model);
+    }
+
+    public ActionResult Create()
+    {
+      ViewBag.StylistId = new SelectList(_db.Stylists, "StylistId", "Name");
+      ViewBag.StylistCount = _db.Stylists.Count();
+      return View();
+    }
+
+    [HttpPost]
+    public ActionResult Create(Client client)
+    {
+      _db.Clients.Add(client);
+      _db.SaveChanges();
+      return RedirectToAction("Index");
     }
   }
 }
