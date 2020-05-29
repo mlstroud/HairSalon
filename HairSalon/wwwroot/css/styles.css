@@ -29,3 +29,15 @@
 .panel {
   box-shadow: 1px 1px 3px black;
 }
+
+.panel-body {
+  padding: 15px;
+}
+
+form {
+  margin: 20px;
+}
+
+.form-control {
+  width: 30%;
+}
