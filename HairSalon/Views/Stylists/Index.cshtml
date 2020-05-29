@@ -34,11 +34,16 @@
           </div>
         </div>
         <div class="panel-body">
-          <strong>Total Cliennts: @stylist.Clients.Count</strong>
+          <strong>Total Clients: @stylist.Clients.Count</strong>
           <hr>
         <a href='@Url.Action("Details", new { id = @stylist.StylistId })'>
           <button class="btn btn-primary">
             View Clients
+          </button>
+        </a>
+        <a href='@Url.Action("Edit", new { id = @stylist.StylistId })'>
+          <button class="btn btn-success">
+            Edit @stylist.Name
           </button>
         </a>
         </div>
