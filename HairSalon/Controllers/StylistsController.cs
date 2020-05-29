@@ -25,5 +25,12 @@ namespace HairSalon.Controllers
     {
       return View();
     }
+
+    public ActionResult Create(Stylist stylist)
+    {
+      _db.Stylists.Add(stylist);
+      _db.SaveChanges();
+      return RedirectToAction("Index");
+    }
   }
 }
