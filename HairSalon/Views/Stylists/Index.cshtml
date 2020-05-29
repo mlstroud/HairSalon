@@ -24,6 +24,26 @@
         </div>
       </div>
     }
+    
+    @foreach(Stylist stylist in Model)
+    {
+      <div class="panel panel-primary">
+        <div class="panel-heading">
+          <div class="panel-title">
+            <strong>@stylist.Name</strong>
+          </div>
+        </div>
+        <div class="panel-body">
+          <strong>Total Cliennts: @stylist.Clients.Count</strong>
+          <hr>
+        <a href='@Url.Action("Details", new { id = @stylist.StylistId })'>
+          <button class="btn btn-primary">
+            View Clients
+          </button>
+        </a>
+        </div>
+      </div>
+    }
   </div>
   <div class="col-md-3">
     <div class="panel panel-primary">
