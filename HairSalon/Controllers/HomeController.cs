@@ -6,7 +6,7 @@ namespace HairSalon.Controllers
   {
     public ActionResult Index()
     {
-      retur View();
+      return View();
     }
   }
 }
