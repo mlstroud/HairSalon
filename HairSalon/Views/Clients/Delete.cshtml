@@ -5,7 +5,7 @@
 
 <div class="row">
   <div class="well">
-    <h2>Edit Client Details</h2>
+    <h2>Remove Client</h2>
   </div>
 </div>
 <div class="row">
@@ -13,22 +13,13 @@
     <div class="panel panel-primary">
       <div class="panel-heading">
         <div class="panel-title">
-          <strong>Editing @Html.DisplayFor(model => model.Name)</strong>
+          <strong>Do you really want to delete @Html.DisplayFor(model => model.Name)?</strong>
         </div>
       </div>
       <div class="panel-body">
         @using (Html.BeginForm())
         {
-          @Html.HiddenFor(model => model.ClientId)
-          @Html.LabelFor(model => model.Name)<br>
-          @Html.EditorFor(model => model.Name, new { @class = "form-control" })<br>
-
-          @Html.LabelFor(model => model.Description)<br>
-          @Html.EditorFor(model => model.Description, new { @class = "form-control" })<br>
-
-          @Html.LabelFor(model => model.Stylist)<br>
-          @Html.DropDownList("StylistId")<br>
-          <input type="submit" value="Save" class="btn btn-primary">
+          <input type="submit" value="Delete" class="btn btn-primary">
         }
       </div>
     </div>
@@ -41,18 +32,11 @@
         </div>
       </div>
       <div class="panel-body  menu">
-        <a href='@Url.Action("Delete", new {id = @Model.StylistId })'>
-          <button class="btn btn-danger">
-            Delete @Model.Name
-          </button>
-        </a>
-        <br>
         <a href='@Url.Action("Details", new {id = @Model.StylistId })'>
           <button class="btn btn-primary">
             View @Model.Name
           </button>
         </a>
-        <br>
         <a href='@Url.Action("Index")'>
           <button class="btn btn-primary">
             View Stylists

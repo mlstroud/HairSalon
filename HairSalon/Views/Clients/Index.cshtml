@@ -34,7 +34,7 @@
         </div>
         <div class="panel-body">
           <strong>Stylist: @Html.ActionLink(@client.Stylist.Name, "Details", "Stylists", new {id = @client.StylistId})</strong><br><br>
-          <a href='@Url.Action("Details", new { id = @client.StylistId })'>
+          <a href='@Url.Action("Details", new { id = @client.ClientId })'>
             <button class="btn btn-primary">
               View @client.Name
             </button>
@@ -42,6 +42,11 @@
           <a href='@Url.Action("Edit", new { id = @client.StylistId })'>
             <button class="btn btn-success">
               Edit @client.Name
+            </button>
+          </a>
+          <a href='@Url.Action("Delete", new { id = @client.StylistId })'>
+            <button class="btn btn-danger">
+              Delete @client.Name
             </button>
           </a>
         </div>
