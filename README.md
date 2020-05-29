@@ -43,6 +43,12 @@ _The user manages a hair salon and is able to add stylits, add clients to a styl
 | /Clients/Details/{id} | Clients->Details | GET |
 | /Clients/Edit/{id} | Clients->Edit | GET
 
+### Stretch Goals
+ * Add Styling (Complete)
+ * Add Edit Functionality (Complete)
+ * Add Search Functionality
+ * Add Appointment Functionality
+
 ## Setup/Installation Requirements
 > This application requires the .NETCore SDK - [Find your version here](https://dotnet.microsoft.com/download/dotnet-core/2.2)
 
