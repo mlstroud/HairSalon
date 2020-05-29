@@ -1,0 +1,66 @@
+@{
+  Layout = "_Layout";
+}
+@using HairSalon.Models
+@model HairSalon.Models.Client
+
+<div class="row">
+  <div class="well">
+    <h2>Add a Client</h2>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-9">
+    <div class="panel panel-primary">
+      <div class="panel-heading">
+        <div class="panel-title">
+          <strong>Client Information</strong>
+        </div>
+      </div>
+      <div class="panel-body">
+        @if(ViewBag.StylistCount == 0)
+        {
+          <strong>Error</strong><br>
+          <p>You must have a stylist before you can add a client.</p>
+        }
+        else
+        {
+          @using (Html.BeginForm())
+          {
+            @Html.LabelFor(model => model.Name)
+            @Html.TextBoxFor(model => model.Name, new { @class = "form-control" })
+
+            @Html.LabelFor(model => model.Description)
+            @Html.TextBoxFor(model => model.Description, new { @class = "form-control" })
+
+
+            @Html.LabelFor(model => model.Stylist)<br>
+            @Html.DropDownList("StylistId")
+            <input type="submit" value="Add Client" class="btn btn-primary">
+          }
+        }
+      </div>
+    </div>
+  </div>
+  <div class="col-md-3">
+    <div class="panel panel-primary">
+      <div class="panel-heading">
+        <div class="panel-title">
+          <strong>Menu</strong>
+        </div>
+      </div>
+      <div class="panel-body  menu">
+        <a href='@Url.Action("Index")'>
+          <button class="btn btn-primary">
+            View Stylists
+          </button>
+        </a>
+        <br>
+        <a href='@Url.Action("Index", "Home")'>
+          <button class="btn btn-success">
+            Back Home
+          </button>
+        </a>
+      </div>
+  </div>
+</div>
