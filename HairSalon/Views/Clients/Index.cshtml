@@ -29,14 +29,16 @@
       <div class="panel panel-primary">
         <div class="panel-heading">
           <div class="panel-title">
-            <strong>@client.Name</strong>
+            <strong>@client.Name</strong> | Client # @client.ClientId
           </div>
         </div>
         <div class="panel-body">
-          <strong>Stylist: @client.Stylist.Name</strong><br><br>
-          <strong>Description</strong><br>
-          <blockquote>@client.Description</blockquote>
-          <br>
+          <strong>Stylist: @Html.ActionLink(@client.Stylist.Name, "Details", "Stylists", new {id = @client.StylistId})</strong><br><br>
+          <a href='@Url.Action("Details", new { id = @client.StylistId })'>
+            <button class="btn btn-primary">
+              View @client.Name
+            </button>
+          </a>
           <a href='@Url.Action("Edit", new { id = @client.StylistId })'>
             <button class="btn btn-success">
               Edit @client.Name
