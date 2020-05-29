@@ -1,0 +1,60 @@
+@{
+  Layout = "_Layout";
+}
+@using HairSalon.Models
+@model HairSalon.Models.Client
+
+<div class="row">
+  <div class="well">
+    <h2>Client Details</h2>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-9">
+    <div class="panel panel-primary">
+      <div class="panel-heading">
+        <div class="panel-title">
+          <strong>@Model.Name</strong> | Client # @Model.ClientId
+        </div>
+      </div>   
+      <div class="panel-body">
+        <strong>Stylist: @Model.Stylist.Name</strong><br><br>
+        <strong>Description</strong><br>
+        <blockquote>@Model.Description</blockquote>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-3">
+    <div class="panel panel-primary">
+      <div class="panel-heading">
+        <div class="panel-title">
+          <strong>Menu</strong>
+        </div>
+      </div>
+      <div class="panel-body  menu">
+        <a href='@Url.Action("Create", "Clients")'>
+          <button class="btn btn-primary">
+            Add Client
+          </button>
+        </a>
+        <br>
+        <a href='@Url.Action("Index")'>
+          <button class="btn btn-primary">
+            View Stylists
+          </button>
+        </a>
+        <br>
+        <a href='@Url.Action("Edit", new { id = @Model.StylistId})'>
+          <button class="btn btn-success">
+            Edit @Model.Name
+          </button>
+        </a>
+        <br>
+        <a href='@Url.Action("Index", "Home")'>
+          <button class="btn btn-success">
+            Back Home
+          </button>
+        </a>
+      </div>
+  </div>
+</div>
