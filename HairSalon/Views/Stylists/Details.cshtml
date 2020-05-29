@@ -1,7 +1,6 @@
 @{
   Layout = "_Layout";
 }
-
 @model HairSalon.Models.Stylist
 
 <div class="row">
@@ -14,16 +13,11 @@
     <div class="panel panel-primary">
       <div class="panel-heading">
         <div class="panel-title">
-          <strong>Stylist Information</strong>
+          <strong>@Model.Name</strong>
         </div>
       </div>
       <div class="panel- body">
-        @using (Html.BeginForm())
-        {
-          @Html.LabelFor(model => model.Name)
-          @Html.TextBoxFor(model => model.Name, new { @class = "form-control" })
-          <input type="submit" value="Add Stylist" class="btn btn-primary">
-        }
+
       </div>
     </div>
   </div>
