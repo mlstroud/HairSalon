@@ -18,9 +18,14 @@
         </div>
       </div>   
       <div class="panel-body">
-        <strong>Stylist: @Model.Stylist.Name</strong><br><br>
+        <strong>Stylist: @Html.ActionLink(@Model.Stylist.Name, "Details", "Stylists", new {id = @Model.StylistId})</strong><br><br>
         <strong>Description</strong><br>
         <blockquote>@Model.Description</blockquote>
+        <a href='@Url.Action("Details", "Stylists", new {id = @Model.StylistId })'>
+          <button class="btn btn-primary">
+            Back to @Model.Stylist.Name
+          </button>
+        </a>
       </div>
     </div>
   </div>
