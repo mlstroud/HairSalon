@@ -54,5 +54,26 @@ namespace HairSalon.Controllers
       _db.SaveChanges();
       return RedirectToAction("Index");
     }
+
+    public ActionResult Search()
+    {
+      return View();
+    }
+
+    [HttpPost]
+    public ActionResult Search(string name)
+    {
+      Stylist stylist = _db.Stylists.FirstOrDefault(stylists => stylists.Name == name);
+      ViewBag.Stylist = stylist;
+      if (stylist == null)
+      {
+        ViewBag.Found = false;
+      }
+      else
+      {
+        ViewBag.Found = true;
+      }
+      return View();
+    }
   }
 }

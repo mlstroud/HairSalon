@@ -1,0 +1,58 @@
+@{
+  Layout = "_Layout";
+}
+@model HairSalon.Models.Stylist
+
+<div class="row">
+  <div class="well">
+    <h2>Seach for a Stylist</h2>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-9">
+    <div class="panel panel-primary">
+      <div class="panel-heading">
+        <div class="panel-title">
+          <strong>Search</strong>
+        </div>
+      </div>
+      <div class="panel-body">
+        @using (Html.BeginForm())
+        {
+          @Html.LabelFor(model => model.Name)<br>
+          @Html.TextBoxFor(model => model.Name, new { @class = "form-control" })<br>
+          <input type="submit" value="Search" class="btn btn-primary">
+        }
+
+        @if(@ViewBag.Found == true)
+        {
+          <br><br>
+          <strong>Search Results</strong>
+          <hr>
+          <strong>@Html.ActionLink($"{@ViewBag.Stylist.Name}", "Details", "Stylists", new {id = @ViewBag.Stylist.StylistId})</strong>
+        }
+      </div>
+    </div>
+  </div>
+  <div class="col-md-3">
+    <div class="panel panel-primary">
+      <div class="panel-heading">
+        <div class="panel-title">
+          <strong>Menu</strong>
+        </div>
+      </div>
+      <div class="panel-body  menu">
+        <a href='@Url.Action("Index")'>
+          <button class="btn btn-primary">
+            View Stylists
+          </button>
+        </a>
+        <br>
+        <a href='@Url.Action("Index", "Home")'>
+          <button class="btn btn-success">
+            Back Home
+          </button>
+        </a>
+      </div>
+  </div>
+</div>
