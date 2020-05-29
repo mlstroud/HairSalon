@@ -50,5 +50,20 @@ namespace HairSalon.Controllers
       ViewBag.StylistId = new SelectList(_db.Stylists, "StylistId", "Name");
       return View(client);
     }
+
+    public ActionResult Delete(int id)
+    {
+      Client client = _db.Clients.FirstOrDefault(clients => clients.ClientId == id);
+      return View(client);
+    }
+
+    [HttpPost, ActionName("Delete")]
+    public ActionResult DeleteConfirmed(int id)
+    {
+      Client client = _db.Clients.FirstOrDefault(clients => clients.ClientId == id);
+      _db.Clients.Remove(client);
+      _db.SaveChanges();
+      return RedirectToAction("Index");
+    }
   }
 }
