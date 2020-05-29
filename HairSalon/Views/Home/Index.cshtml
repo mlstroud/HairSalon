@@ -13,6 +13,7 @@
 <div class="row">
   <div class="col-md-12 splash-content">
     <div class="content">
+      <h3>View Staff & Clients</h3>
       <a href='@Url.Action("Index", "Stylists")'>
         <button class="btn btn-primary">
           View Stylists
@@ -22,6 +23,19 @@
       <a href='@Url.Action("Index", "Clients")'>
         <button class="btn btn-primary">
           View Clients
+        </button>
+      </a>
+
+      <h3>Administration</h3>
+      <a href='@Url.Action("Create", "Stylists")'>
+        <button class="btn btn-primary">
+          Hire Stylist
+        </button>
+      </a>
+
+      <a href='@Url.Action("Create", "Clients")'>
+        <button class="btn btn-primary">
+          Add Client
         </button>
       </a>
     </div>
