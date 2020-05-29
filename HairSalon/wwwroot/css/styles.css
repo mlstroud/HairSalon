@@ -1,0 +1,21 @@
+.jumbotron{
+  text-align: center !important;
+  background-color: white;
+}
+
+.well {
+  text-align: center;
+  background-color: #EEEEEE;
+  box-shadow: 1px 1px 3px black;
+}
+
+.splash-content {
+  text-align: center;
+}
+
+.btn {
+  margin: 5px;
+  font-weight: bold;
+  text-shadow: 1px 1px 2px black;
+  box-shadow: 1px 1px 3px black;
+}
