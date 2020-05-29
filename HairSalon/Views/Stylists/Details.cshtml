@@ -1,11 +1,11 @@
 @{
   Layout = "_Layout";
 }
-@model HairSalon.Models.Stylist
+@using HairSalon.Models
 
 <div class="row">
   <div class="well">
-    <h2>Hire a Stylist</h2>
+    <h2>Stylist Details</h2>
   </div>
 </div>
 <div class="row">
@@ -13,11 +13,30 @@
     <div class="panel panel-primary">
       <div class="panel-heading">
         <div class="panel-title">
-          <strong>@Model.Name</strong>
+          <strong>@Model.Name</strong> | Employee ID @Model.StylistId
         </div>
-      </div>
-      <div class="panel- body">
-
+      </div>   
+      <div class="panel-body">
+        @if(@Model.Clients.Count == 0)
+        {
+          <p>@Model.Name has no current clients.</p>
+        }
+        else
+        {
+          <table class="table">
+            <tr>
+              <th>Name</th>
+              <th>Description</th>
+            </tr>
+            @foreach(Client client in @Model.Clients)
+            {
+              <tr>
+                <td>@client.Name</td>
+                <td>@client.Description</td>
+              </tr>
+            }
+          </table>
+        }
       </div>
     </div>
   </div>
@@ -29,6 +48,11 @@
         </div>
       </div>
       <div class="panel-body  menu">
+        <a href='@Url.Action("Create", "Clients")'>
+          <button class="btn btn-primary">
+            Add Client
+          </button>
+        </a>
         <a href='@Url.Action("Index")'>
           <button class="btn btn-primary">
             View Stylists
