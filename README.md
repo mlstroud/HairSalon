@@ -46,6 +46,7 @@ _The user manages a hair salon and is able to add stylits, add clients to a styl
 ### Stretch Goals
  * Add Styling (Complete)
  * Add Edit Functionality (Complete)
+ * Add Delete Functionality (In Progress)
  * Add Search Functionality
  * Add Appointment Functionality
 
@@ -93,7 +94,7 @@ http://localhost:5000/
 
 ## Known Bugs
 
-* Certain css style aspects such as float would not apply correctly via linked script, and were hardcoded into their elements until issue is resolved.
+* Deletion of Stylists is not yet supported until workaround for re-assigning their clients is implemented.
  
 ## Support and contact details
 
