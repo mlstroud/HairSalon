@@ -47,7 +47,7 @@ _The user manages a hair salon and is able to add stylits, add clients to a styl
  * Add Styling (Complete)
  * Add Edit Functionality (Complete)
  * Add Delete Functionality (In Progress)
- * Add Search Functionality (In Progress)
+ * Add Search Functionality (Complete)
  * Add Appointment Functionality
 
 ## Setup/Installation Requirements
