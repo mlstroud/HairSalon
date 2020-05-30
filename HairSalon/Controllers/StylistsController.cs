@@ -63,13 +63,11 @@ namespace HairSalon.Controllers
     [HttpPost]
     public ActionResult Search(string name)
     {
-      Stylist stylist = _db.Stylists.FirstOrDefault(stylists => stylists.Name == name);
-      ViewBag.Stylist = stylist;
-      if (stylist == null)
-      {
-        ViewBag.Found = false;
-      }
-      else
+      List<Stylist> stylists = _db.Stylists.Where(stylist => stylist.Name.Contains(name)).ToList();
+      ViewBag.Stylists = stylists;
+      ViewBag.SearchedString = name;
+      ViewBag.Found = false;
+      if (stylists != null)
       {
         ViewBag.Found = true;
       }

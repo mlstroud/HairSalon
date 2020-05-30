@@ -1,6 +1,7 @@
 @{
   Layout = "_Layout";
 }
+@using HairSalon.Models
 @model HairSalon.Models.Stylist
 
 <div class="row">
@@ -27,9 +28,13 @@
         @if(@ViewBag.Found == true)
         {
           <br><br>
-          <strong>Search Results</strong>
+          <strong>Search Results Containing "@ViewBag.SearchedString"</strong>
           <hr>
-          <strong>@Html.ActionLink($"{@ViewBag.Stylist.Name}", "Details", "Stylists", new {id = @ViewBag.Stylist.StylistId})</strong>
+          @foreach(Stylist stylist in ViewBag.Stylists)
+          {
+            <strong>@Html.ActionLink($"{@stylist.Name}", "Details", "Stylists", new {id = @stylist.StylistId})</strong>
+            <br>
+          }
         }
       </div>
     </div>
