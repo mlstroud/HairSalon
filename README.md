@@ -105,6 +105,7 @@ _Have a bug or an issue with this application? [Open a new issue](https://github
 * C#
 * .NET Core
 * MVC
+* Entity Framework Core
 * RESTful Design
 * MSTest
 * Git
