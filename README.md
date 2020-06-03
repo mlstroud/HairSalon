@@ -69,6 +69,8 @@ git clone https://github.com/mlstroud/HairSalon.git
 ```
 CREATE DATABASE `matt_stroud`;
 
+USE `matt_stroud`;
+
 CREATE TABLE `clients` (
   `ClientId` int NOT NULL AUTO_INCREMENT,
   `Name` varchar(255) NOT NULL,
